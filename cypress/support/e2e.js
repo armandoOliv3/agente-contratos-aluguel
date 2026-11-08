@@ -1,9 +1,5 @@
 // Comandos usados nos testes
-
-const CONTRATOS = [
-  'ct-2025-001.pdf', 'ct-2024-014.pdf', 'ct-2025-031.pdf', 'ct-2022-007.pdf', 'ct-2024-002.pdf', 'ct-2021-019.pdf',
-  'ct-2023-045.pdf', 'ct-2025-050.pdf', 'ct-2025-063.pdf', 'ct-2026-004.pdf', 'ct-2024-030.pdf',
-]
+import { CONTRATOS, DATA_BASE } from './dados.js'
 
 Cypress.Commands.add('todosOsContratos', () => cy.wrap(CONTRATOS.map((nome) => ({ nome }))))
 
@@ -13,7 +9,7 @@ Cypress.Commands.add('enviarContratos', (rota, arquivos, campos = {}) =>
 )
 
 // Na tela: escolhe os PDFs, define a data base e clica em Analisar
-Cypress.Commands.add('analisarNaTela', (caminhos, dataBase = Cypress.env('dataBase')) => {
+Cypress.Commands.add('analisarNaTela', (caminhos, dataBase = DATA_BASE) => {
   cy.get('[data-cy="input-arquivos"]').selectFile(caminhos, { force: true })
   cy.get('[data-cy="input-data-base"]').clear().type(dataBase)
   cy.get('[data-cy="botao-analisar"]').click()

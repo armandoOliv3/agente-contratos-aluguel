@@ -9,10 +9,6 @@ export default defineConfig({
     viewportWidth: 1280,
     viewportHeight: 900,
     video: false,
-    env: {
-      // Data base fixa: os alertas dos contratos fictícios foram pensados para 08/11/2026
-      dataBase: '2026-11-08',
-    },
     setupNodeEvents(on, config) {
       on('task', {
         enviarMultipart: (opcoes) => enviarMultipart({ baseUrl: config.baseUrl, ...opcoes }),

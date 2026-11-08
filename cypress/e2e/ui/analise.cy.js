@@ -1,3 +1,5 @@
+import { DATA_BASE } from '../../support/dados.js'
+
 const contrato = (nome) => `contratos/${nome}`
 
 describe('Tela: análise dos contratos', () => {
@@ -37,7 +39,7 @@ describe('Tela: análise dos contratos', () => {
   it('carrega os 11 contratos de exemplo pelo link', () => {
     cy.pegar('link-exemplos').click()
     cy.pegar('arquivos-escolhidos').should('contain', '11 arquivo(s)')
-    cy.pegar('input-data-base').clear().type(Cypress.env('dataBase'))
+    cy.pegar('input-data-base').clear().type(DATA_BASE)
     cy.pegar('botao-analisar').click()
     cy.get('[data-cy="tabela-contratos"] tbody tr').should('have.length', 11)
     cy.pegar('resumo-receita').should('contain', 'R$')

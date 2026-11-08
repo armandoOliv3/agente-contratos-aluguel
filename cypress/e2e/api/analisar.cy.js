@@ -1,5 +1,6 @@
+import { DATA_BASE as dataBase } from '../../support/dados.js'
+
 const ROTA = '/api/contratos/analisar'
-const dataBase = Cypress.env('dataBase')
 
 describe('API: análise dos contratos', () => {
   it('analisa os 11 contratos fictícios', () => {
