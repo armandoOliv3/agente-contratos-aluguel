@@ -112,9 +112,12 @@ footer { text-align: center; color: var(--suave); font-size: 0.8rem; padding: 32
   .campos { flex-direction: column; align-items: stretch; }
   .acoes div { width: 100%; }
   .acoes button { flex: 1; }
-  /* No celular: fonte menor nos números e a receita ocupa a linha inteira (é o valor mais longo) */
+  /* No celular: fonte menor nos números; total e receita (o valor mais longo) ocupam a linha inteira
+     no topo e os outros quatro cartões ficam em duas colunas */
   .cartao strong { font-size: 1.15rem; }
-  [data-cy="resumo-receita"] { grid-column: 1 / -1; }
+  [data-cy="resumo-total"], [data-cy="resumo-receita"] { grid-column: 1 / -1; }
+  [data-cy="resumo-total"] { order: -2; }
+  [data-cy="resumo-receita"] { order: -1; }
 }
 
 /* A tabela rola dentro do quadro em telas estreitas, sem quebrar códigos e datas */
