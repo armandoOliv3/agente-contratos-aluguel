@@ -1,0 +1,71 @@
+// Variação ACUMULADA EM 12 MESES (%) de cada índice, por mês de referência.
+// ATENÇÃO: valores ILUSTRATIVOS para estudo. Não são os índices oficiais.
+// Uma tabela fixa deixa os testes determinísticos (o resultado nunca muda).
+export const INDICES = {
+  '2022-01': { 'IGP-M': 6.33, IPCA: 4.91 },
+  '2022-02': { 'IGP-M': 7.22, IPCA: 4.92 },
+  '2022-03': { 'IGP-M': 8.19, IPCA: 5.41 },
+  '2022-04': { 'IGP-M': 8.19, IPCA: 5.7 },
+  '2022-05': { 'IGP-M': 8.46, IPCA: 5.6 },
+  '2022-06': { 'IGP-M': 8.99, IPCA: 5.64 },
+  '2022-07': { 'IGP-M': 8.73, IPCA: 5.66 },
+  '2022-08': { 'IGP-M': 8.83, IPCA: 6.15 },
+  '2022-09': { 'IGP-M': 8.53, IPCA: 5.97 },
+  '2022-10': { 'IGP-M': 7.57, IPCA: 6.37 },
+  '2022-11': { 'IGP-M': 7.5, IPCA: 6.38 },
+  '2022-12': { 'IGP-M': 6.32, IPCA: 6.09 },
+  '2023-01': { 'IGP-M': 5.61, IPCA: 6.41 },
+  '2023-02': { 'IGP-M': 4.5, IPCA: 5.81 },
+  '2023-03': { 'IGP-M': 3.93, IPCA: 6.15 },
+  '2023-04': { 'IGP-M': 3.03, IPCA: 5.99 },
+  '2023-05': { 'IGP-M': 2.24, IPCA: 5.67 },
+  '2023-06': { 'IGP-M': 0.94, IPCA: 5.39 },
+  '2023-07': { 'IGP-M': 0.09, IPCA: 5.46 },
+  '2023-08': { 'IGP-M': -0.77, IPCA: 5.27 },
+  '2023-09': { 'IGP-M': -1.9, IPCA: 4.95 },
+  '2023-10': { 'IGP-M': -2.3, IPCA: 4.43 },
+  '2023-11': { 'IGP-M': -2.79, IPCA: 4.12 },
+  '2023-12': { 'IGP-M': -3.04, IPCA: 3.91 },
+  '2024-01': { 'IGP-M': -3.1, IPCA: 4.01 },
+  '2024-02': { 'IGP-M': -3.19, IPCA: 3.66 },
+  '2024-03': { 'IGP-M': -2.4, IPCA: 3.41 },
+  '2024-04': { 'IGP-M': -2.3, IPCA: 3.48 },
+  '2024-05': { 'IGP-M': -1.7, IPCA: 3.06 },
+  '2024-06': { 'IGP-M': -1.33, IPCA: 2.94 },
+  '2024-07': { 'IGP-M': -0.36, IPCA: 3.36 },
+  '2024-08': { 'IGP-M': 0.54, IPCA: 3.05 },
+  '2024-09': { 'IGP-M': 1.54, IPCA: 3.21 },
+  '2024-10': { 'IGP-M': 1.93, IPCA: 2.85 },
+  '2024-11': { 'IGP-M': 3.11, IPCA: 2.95 },
+  '2024-12': { 'IGP-M': 4.65, IPCA: 2.97 },
+  '2025-01': { 'IGP-M': 5.1, IPCA: 3.48 },
+  '2025-02': { 'IGP-M': 6.05, IPCA: 3.49 },
+  '2025-03': { 'IGP-M': 6.91, IPCA: 3.8 },
+  '2025-04': { 'IGP-M': 7.44, IPCA: 3.6 },
+  '2025-05': { 'IGP-M': 8.02, IPCA: 3.98 },
+  '2025-06': { 'IGP-M': 8.95, IPCA: 4.2 },
+  '2025-07': { 'IGP-M': 8.67, IPCA: 4.32 },
+  '2025-08': { 'IGP-M': 9.01, IPCA: 4.9 },
+  '2025-09': { 'IGP-M': 8.57, IPCA: 4.59 },
+  '2025-10': { 'IGP-M': 8.81, IPCA: 4.82 },
+  '2025-11': { 'IGP-M': 8.26, IPCA: 5.44 },
+  '2025-12': { 'IGP-M': 7.7, IPCA: 5.21 },
+  '2026-01': { 'IGP-M': 7.15, IPCA: 5.95 },
+  '2026-02': { 'IGP-M': 6.63, IPCA: 6.09 },
+  '2026-03': { 'IGP-M': 5.65, IPCA: 5.66 },
+  '2026-04': { 'IGP-M': 4.56, IPCA: 6.17 },
+  '2026-05': { 'IGP-M': 3.66, IPCA: 6.0 },
+  '2026-06': { 'IGP-M': 2.5, IPCA: 5.95 },
+  '2026-07': { 'IGP-M': 1.93, IPCA: 6.17 },
+  '2026-08': { 'IGP-M': 0.43, IPCA: 6.41 },
+  '2026-09': { 'IGP-M': -0.52, IPCA: 6.13 },
+  '2026-10': { 'IGP-M': -0.76, IPCA: 6.3 },
+}
+
+export const INDICES_SUPORTADOS = ['IGP-M', 'IPCA']
+
+// Variação acumulada do índice no mês de referência (formato AAAA-MM), ou null se não houver dado
+export function variacaoAcumulada(indice, mesReferencia, tabela = INDICES) {
+  const valor = tabela[mesReferencia]?.[indice]
+  return typeof valor === 'number' ? valor : null
+}

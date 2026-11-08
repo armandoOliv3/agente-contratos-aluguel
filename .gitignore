@@ -1,0 +1,6 @@
+node_modules/
+coverage/
+cypress/downloads/
+cypress/screenshots/
+cypress/videos/
+cypress/fixtures/gerados/

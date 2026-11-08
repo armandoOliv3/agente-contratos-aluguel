@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agente de Contratos</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="marca">
+      <h1>Agente de Contratos</h1>
+      <p>Envie os contratos de aluguel em PDF. O agente lê cada um, calcula vencimentos e reajustes e monta o relatório.</p>
+    </div>
+    <span class="modo" data-cy="modo-agente">agente: …</span>
+  </header>
+
+  <main>
+    <form class="envio" data-cy="form-envio" novalidate>
+      <label class="soltar" data-cy="area-arquivos">
+        <input type="file" name="arquivos" accept="application/pdf,.pdf" multiple data-cy="input-arquivos">
+        <strong>Escolher contratos (PDF)</strong>
+        <span data-cy="arquivos-escolhidos">ou arraste os arquivos para cá</span>
+      </label>
+
+      <div class="campos">
+        <label>
+          Data base do relatório
+          <input type="date" name="dataBase" required data-cy="input-data-base">
+        </label>
+        <button type="submit" data-cy="botao-analisar">Analisar contratos</button>
+      </div>
+      <p class="dica">Sem contratos à mão? <a href="#" data-cy="link-exemplos">Usar os 11 contratos fictícios de exemplo</a></p>
+    </form>
+
+    <p class="aviso" role="alert" data-cy="mensagem-erro" hidden></p>
+    <p class="carregando" data-cy="carregando" hidden>Lendo os contratos…</p>
+
+    <section data-cy="resultado" hidden>
+      <div class="resumo" data-cy="resumo"></div>
+
+      <div class="acoes">
+        <h2>Contratos</h2>
+        <div>
+          <button type="button" class="secundario" data-formato="pdf" data-cy="baixar-pdf">Baixar PDF</button>
+          <button type="button" class="secundario" data-formato="xlsx" data-cy="baixar-planilha">Baixar planilha</button>
+        </div>
+      </div>
+
+      <div class="tabela-rolagem">
+        <table data-cy="tabela-contratos">
+          <thead>
+            <tr>
+              <th>Contrato</th><th>Locatário</th><th>Índice</th><th class="num">Valor contratado</th><th class="num">Valor atual</th>
+              <th>Próx. vencimento</th><th>Próx. reajuste</th><th>Fim</th><th>Situação</th><th>Alertas</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="erros" data-cy="erros-arquivos" hidden>
+        <h3>Arquivos não analisados</h3>
+        <ul></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>Projeto de estudo de QA. Contratos fictícios e índices ilustrativos.</footer>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

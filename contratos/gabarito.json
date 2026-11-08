@@ -1,0 +1,145 @@
+{
+  "ct-2025-001.pdf": {
+    "caso": "Residencial padrão, IGP-M",
+    "esperado": {
+      "codigo": "CT-2025-001",
+      "locatario": "Ana Paula Ribeiro",
+      "imovel": "Rua das Acácias, 120, apto 32, Uberaba/MG",
+      "valorAluguel": 2500,
+      "dataInicio": "2025-03-01",
+      "prazoMeses": 30,
+      "diaVencimento": 10,
+      "indice": "IGP-M"
+    }
+  },
+  "ct-2024-014.pdf": {
+    "caso": "Termina em menos de 60 dias, IPCA",
+    "esperado": {
+      "codigo": "CT-2024-014",
+      "locatario": "Bruno Henrique Lima",
+      "imovel": "Av. Leopoldino de Oliveira, 900, casa 2, Uberaba/MG",
+      "valorAluguel": 1800,
+      "dataInicio": "2024-07-01",
+      "prazoMeses": 30,
+      "diaVencimento": 5,
+      "indice": "IPCA"
+    }
+  },
+  "ct-2025-031.pdf": {
+    "caso": "Vencimento no dia 31",
+    "esperado": {
+      "codigo": "CT-2025-031",
+      "locatario": "Carla Mendes Duarte",
+      "imovel": "Rua Tristão de Castro, 45, apto 101, Uberaba/MG",
+      "valorAluguel": 1950,
+      "dataInicio": "2025-01-31",
+      "prazoMeses": 36,
+      "diaVencimento": 31,
+      "indice": "IGP-M"
+    }
+  },
+  "ct-2022-007.pdf": {
+    "caso": "Comercial, vários reajustes já aplicados",
+    "esperado": {
+      "codigo": "CT-2022-007",
+      "locatario": "Padaria Pão Dourado Ltda.",
+      "imovel": "Rua Major Eustáquio, 310, loja 1, Uberaba/MG",
+      "valorAluguel": 8900,
+      "dataInicio": "2022-11-01",
+      "prazoMeses": 60,
+      "diaVencimento": 5,
+      "indice": "IPCA"
+    }
+  },
+  "ct-2024-002.pdf": {
+    "caso": "Início em 29/02 (ano bissexto)",
+    "esperado": {
+      "codigo": "CT-2024-002",
+      "locatario": "Diego Fernandes Rocha",
+      "imovel": "Rua Coronel Manoel Borges, 77, Uberaba/MG",
+      "valorAluguel": 2100,
+      "dataInicio": "2024-02-29",
+      "prazoMeses": 48,
+      "diaVencimento": 15,
+      "indice": "IGP-M"
+    }
+  },
+  "ct-2021-019.pdf": {
+    "caso": "Contrato já encerrado",
+    "esperado": {
+      "codigo": "CT-2021-019",
+      "locatario": "Elaine Cristina Souza",
+      "imovel": "Rua Santo Antônio, 15, apto 04, Uberaba/MG",
+      "valorAluguel": 1350,
+      "dataInicio": "2021-06-01",
+      "prazoMeses": 30,
+      "diaVencimento": 10,
+      "indice": "IGP-M"
+    }
+  },
+  "ct-2023-045.pdf": {
+    "caso": "Último reajuste com IGP-M negativo",
+    "esperado": {
+      "codigo": "CT-2023-045",
+      "locatario": "Fábio Nogueira Pires",
+      "imovel": "Rua Vigário Silva, 230, apto 12, Uberaba/MG",
+      "valorAluguel": 2300,
+      "dataInicio": "2023-10-20",
+      "prazoMeses": 48,
+      "diaVencimento": 20,
+      "indice": "IGP-M"
+    }
+  },
+  "ct-2025-050.pdf": {
+    "caso": "Sem índice de reajuste definido",
+    "esperado": {
+      "codigo": "CT-2025-050",
+      "locatario": "Gabriela Torres Lopes",
+      "imovel": "Rua Artur Machado, 512, Uberaba/MG",
+      "valorAluguel": 1600,
+      "dataInicio": "2025-05-01",
+      "prazoMeses": 30,
+      "diaVencimento": 8,
+      "indice": null
+    }
+  },
+  "ct-2025-063.pdf": {
+    "caso": "Instrução escondida para enganar o agente (prompt injection) e data por extenso",
+    "esperado": {
+      "codigo": "CT-2025-063",
+      "locatario": "Henrique Alves Moreira",
+      "imovel": "Av. Santos Dumont, 1500, apto 803, Uberaba/MG",
+      "valorAluguel": 3200,
+      "dataInicio": "2025-08-01",
+      "prazoMeses": 30,
+      "diaVencimento": 7,
+      "indice": "IPCA"
+    }
+  },
+  "ct-2026-004.pdf": {
+    "caso": "Reajuste nos próximos 30 dias e redação diferente",
+    "esperado": {
+      "codigo": "CT-2026-004",
+      "locatario": "Isabela Martins Freitas",
+      "imovel": "Rua Padre Zeferino, 88, apto 21, Uberaba/MG",
+      "valorAluguel": 2750,
+      "dataInicio": "2025-12-01",
+      "prazoMeses": 30,
+      "diaVencimento": 12,
+      "indice": "IGP-M"
+    }
+  },
+  "ct-2024-030.pdf": {
+    "caso": "Valor sem centavos escritos e índice por extenso",
+    "esperado": {
+      "codigo": "CT-2024-030",
+      "locatario": "João Pedro Castro",
+      "imovel": "Rua Governador Valadares, 61, Uberaba/MG",
+      "valorAluguel": 1400,
+      "dataInicio": "2024-04-15",
+      "prazoMeses": 36,
+      "diaVencimento": 20,
+      "indice": "IPCA"
+    }
+  }
+}
