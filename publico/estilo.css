@@ -77,7 +77,7 @@ button:focus-visible, a:focus-visible, .soltar:focus-within { outline: 3px solid
 .resumo { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 24px 0; }
 .cartao { background: var(--papel); border: 1px solid var(--linha); border-radius: 10px; padding: 14px 16px; }
 .cartao span { display: block; font-size: 0.8rem; color: var(--suave); }
-.cartao strong { font-size: 1.4rem; font-variant-numeric: tabular-nums; }
+.cartao strong { display: block; font-size: 1.4rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
 
 .acoes { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
 .acoes h2 { margin: 0; font-size: 1.1rem; }
@@ -112,6 +112,9 @@ footer { text-align: center; color: var(--suave); font-size: 0.8rem; padding: 32
   .campos { flex-direction: column; align-items: stretch; }
   .acoes div { width: 100%; }
   .acoes button { flex: 1; }
+  /* No celular: fonte menor nos números e a receita ocupa a linha inteira (é o valor mais longo) */
+  .cartao strong { font-size: 1.15rem; }
+  [data-cy="resumo-receita"] { grid-column: 1 / -1; }
 }
 
 /* A tabela rola dentro do quadro em telas estreitas, sem quebrar códigos e datas */

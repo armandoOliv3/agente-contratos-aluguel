@@ -140,4 +140,27 @@ describe('Tela: celular', () => {
     cy.pegar('resultado').should('be.visible')
     cy.document().its('documentElement.scrollWidth').should('be.lte', 375)
   })
+
+  // Receita de milhões é o valor mais longo da tela: o texto não pode passar da borda do cartão
+  ;[
+    ['iPhone SE (375 px)', 375, 667],
+    ['tela de 320 px', 320, 568],
+  ].forEach(([nome, largura, altura]) => {
+    it(`${nome}: os valores do resumo cabem dentro dos cartões, mesmo com receita de milhões`, () => {
+      cy.intercept('POST', '/api/contratos/analisar', (req) =>
+        req.continue((res) => {
+          res.body.resumo.receitaMensal = 1234567.89
+        }),
+      )
+      cy.viewport(largura, altura)
+      cy.visit('/')
+      cy.analisarNaTela(['ct-2025-001.pdf', 'ct-2025-050.pdf'].map(contrato))
+      cy.pegar('resumo-receita').contains('1.234.567,89')
+      cy.get('.cartao strong').each(($valor) => {
+        const cartao = $valor.parent().attr('data-cy')
+        // scrollWidth maior que clientWidth = texto vazando do cartão
+        expect($valor[0].scrollWidth, `valor do ${cartao}`).to.be.lte($valor[0].clientWidth)
+      })
+    })
+  })
 })

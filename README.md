@@ -78,7 +78,7 @@ Tudo roda no GitHub Actions a cada envio.
 | Unidade, agente, relatórios e API | Vitest | 176 testes, cobertura acima de 99% de linhas (o Actions falha se cair abaixo do mínimo) |
 | Avaliação do agente | `npm run avaliar` | Taxa de acerto por campo contra o gabarito. Falha abaixo de 95% |
 | API | Cypress | 18 testes |
-| Tela | Cypress | 14 testes |
+| Tela | Cypress | 16 testes |
 
 ### Vitest
 
@@ -101,7 +101,7 @@ Tudo roda no GitHub Actions a cada envio.
 |---|---|
 | `cypress/e2e/api/saude.cy.js` | Saúde do serviço, rota inexistente, envio que não é multipart |
 | `cypress/e2e/api/analisar.cy.js` | Análise dos 11 contratos, instrução escondida, dia 31, alertas, data base, erros 400/413/422, download de PDF e planilha |
-| `cypress/e2e/ui/analise.cy.js` | Escolher arquivos (`cy.selectFile`), resumo e tabela, alertas, contratos de exemplo, erros na tela, carregando, servidor fora do ar (`cy.intercept`), nome de locatário com HTML malicioso, downloads, tela de celular |
+| `cypress/e2e/ui/analise.cy.js` | Escolher arquivos (`cy.selectFile`), resumo e tabela, alertas, contratos de exemplo, erros na tela, carregando, servidor fora do ar (`cy.intercept`), nome de locatário com HTML malicioso, downloads, tela de celular (sem rolagem para os lados e valores dentro dos cartões, mesmo com receita de milhões) |
 
 O `cy.request` não envia arquivos em multipart, então os testes de API usam uma tarefa no Node (`cy.task`, em `cypress/tarefas/multipart.js`) que envia com `fetch` + `FormData`. Essa tarefa também tem teste no Vitest.
 
